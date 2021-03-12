@@ -13,11 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Band> bands = [
-    Band(id: '1', name: 'Queen', votes: 5),
-    Band(id: '2', name: 'Metallica', votes: 9),
-    Band(id: '3', name: 'Bon Jovi', votes: 12),
-  ];
+  List<Band> bands = [];
   @override
   void initState() {
     final socketService = Provider.of<SocketService>(context, listen: false);
