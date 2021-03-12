@@ -13,7 +13,7 @@ class SocketService with ChangeNotifier {
     this._initConfig();
   }
   void _initConfig() {
-    this._socket = IO.io('http://192.168.0.17:3000/', {
+    this._socket = IO.io('http://192.168.0.19:3000/', {
       'transports': ['websocket'],
       'autoConnect': true,
     });
@@ -25,6 +25,7 @@ class SocketService with ChangeNotifier {
       this._serverStatus = ServerStatus.Offline;
       notifyListeners();
     });
+    this._socket.connect();
     // this._socket.on('nuevo-mensaje', (payload) {
     //   print('Nuevo mensaje: $payload');
     //   print('Nombre: ' + payload['nombre']);
